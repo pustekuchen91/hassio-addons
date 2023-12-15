@@ -1,6 +1,6 @@
 ---
 name: Vaultwarden (Bitwarden)
-version: "0.1.1"
+version: "0.1.2"
 slug: vaultwarden
 description: Open source password management solution
 url: https://github.com/StrausFuenf/hassio-addons/tree/main/vaultwarden
