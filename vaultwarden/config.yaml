@@ -3,7 +3,7 @@ name: Vaultwarden (Bitwarden)
 version: 0.2
 slug: vaultwarden
 description: Open source password management solution
-url: https://github.com/strausfuenf/hassio_addons
+url: https://github.com/StrausFuenf/hassio-addons/tree/main/vaultwarden
 codenotary: admin@strausfuenf.de
 webui: "[PROTO:ssl]://[HOST]:[PORT:7277]"
 init: false
