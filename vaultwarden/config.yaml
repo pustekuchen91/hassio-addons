@@ -1,6 +1,6 @@
 ---
 name: Vaultwarden (Bitwarden)
-version: "0.2"
+version: "0.1"
 slug: vaultwarden
 description: Open source password management solution
 url: https://github.com/StrausFuenf/hassio-addons/tree/main/vaultwarden
@@ -19,7 +19,6 @@ ports_description:
 privileged:
   - NET_ADMIN
   - NET_RAW
-options:
 schema:
   fail2ban: bool?
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
