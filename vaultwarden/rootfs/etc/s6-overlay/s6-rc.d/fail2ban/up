@@ -1,0 +1,25 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: Vaultwarden
+# Runs the fail2ban daemon
+# ==============================================================================
+declare cfuser
+
+cfuser=$(bashio::config 'cfuser')
+
+if [ -z ${cfuser+x} ]; then
+echo "var is unset";
+else
+sed -i "s/cfuser =/cfuser = $(bashio::config 'cfuser')/g" /etc/fail2ban/action.d/cloudflare.conf;
+sed -i "s/cftoken =/cftoken = $(bashio::config 'cf_token')/g" /etc/fail2ban/action.d/cloudflare.conf;
+sed -i "s/banaction = route/banaction = route cloudflare/g" /etc/fail2ban/jail.d/vaultwarden.local;
+sed -i "s/banaction = route/banaction = route cloudflare/g" /etc/fail2ban/jail.d/vaultwarden-admin.local;
+fi
+
+
+bashio::net.wait_for 10
+if $(bashio::config 'fail2ban') -eq true; then
+bashio::log.info "Starting Fail2ban...$(bashio::config 'fail2ban')"
+exec fail2ban-server
+fi

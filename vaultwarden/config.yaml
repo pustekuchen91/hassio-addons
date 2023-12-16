@@ -22,6 +22,8 @@ privileged:
 options:
   fail2ban: false  
 schema:
+  cf_token: str?
+  cfuser: str?
   fail2ban: bool
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   push_key: str?
