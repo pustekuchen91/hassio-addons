@@ -37,7 +37,7 @@ COPY rootfs /
 
 #!/bin/bash
 
-RUN chmod a+rwx /etc/s6-overlay/s6-rc.d/fail2ban/run
+RUN chmod u+rwx /etc/s6-overlay/s6-rc.d/fail2ban/run
 
 # Build arguments
 ARG BUILD_ARCH
