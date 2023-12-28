@@ -1,10 +1,9 @@
 ---
-name: Vaultwarden (Bitwarden)
+name: Vaultwarden (Bitwarden) [pustekuchen91]
 version: "0.1.8.4"
 slug: vaultwarden
 description: Open source password management solution
-url: https://github.com/StrausFuenf/hassio-addons/tree/main/vaultwarden
-codenotary: admin@strausfuenf.de
+url: https://github.com/pustekuchen91/hassio-addons/tree/main/vaultwarden
 webui: "[PROTO:ssl]://[HOST]:[PORT:7277]"
 init: false
 arch:
