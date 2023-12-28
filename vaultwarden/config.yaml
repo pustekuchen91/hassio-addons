@@ -1,6 +1,6 @@
 ---
 name: Vaultwarden (Bitwarden) [pustekuchen91]
-version: "0.1.8.4"
+version: "0.1.8.5"
 slug: vaultwarden
 description: Open source password management solution
 url: https://github.com/pustekuchen91/hassio-addons/tree/main/vaultwarden
@@ -10,7 +10,7 @@ arch:
   - aarch64
   - amd64
   - armv7
-image: "ghcr.io/strausfuenf/vaultwarden-{arch}"  
+image: "ghcr.io/pustekuchen91/vaultwarden-{arch}"  
 ports:
   80/tcp: 7277
 ports_description:
