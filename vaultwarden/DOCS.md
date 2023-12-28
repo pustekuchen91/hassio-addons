@@ -1,8 +1,9 @@
 # Home Assistant Community Add-on: Vaultwarden (Bitwarden)
 
-This is forked from the original Vaultwarden [community-addon]
+This is forked from the original Vaultwarden [community-addon].
+Updates in the original addon repo takes too long.
 
-Credit goes to [frenck]
+Credit goes to [frenck] for the base addon and [StrausFuenf] for extending it by push notification and fail2ban
 
 This Addon adds Push notification support and Fail2ban for more security
 
