@@ -25,10 +25,16 @@ RUN \
     && apt-get install -y --no-install-recommends \
         libmariadb-dev-compat=1:10.11.4-1~deb12u1 \
         libpq5=15.5-0+deb12u1 \
+        nginx=1.22.1-9 \
         sqlite3=3.40.1-2 \
         fail2ban=1.0.2-2 \
         iproute2=6.1.0-3 \
     && apt-get clean \
+    && rm -f -r \
+        /etc/nginx \
+    \
+    && mkdir -p /var/log/nginx \
+    && touch /var/log/nginx/error.log\
     && rm /etc/fail2ban/jail.d/defaults-debian.conf \
     && rm /etc/fail2ban/fail2ban.conf
 
@@ -55,13 +61,13 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="StrausFuenf <admin@strausfuenf.de>" \
+    maintainer="pustekuchen91" \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
-    org.opencontainers.image.vendor="StrausFuenf's Home Assistant Add-ons" \
-    org.opencontainers.image.authors="StrausFuenf <admin@strausfuenf.de>" \
+    org.opencontainers.image.vendor="pustekuchens Home Assistant Community Add-ons" \
+    org.opencontainers.image.authors="pustekuchen91" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="https://github.com/StrausFuenf/hassio-addons" \
+    org.opencontainers.image.url="https://github.com/pustekuchen91/hassio-addons" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \

@@ -89,7 +89,6 @@ export PUSH_INSTALLATION_KEY="${push_key}"
 
 # Always enable Websockets
 export WEBSOCKET_ENABLED=true
-#export WEBSOCKET_PORT=8080 Works with port 80 now
 
 # Run the Bitwarden server
 bashio::log.info 'Starting the Vaultwarden server...'

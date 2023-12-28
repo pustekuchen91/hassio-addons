@@ -41,4 +41,4 @@ configuration:
     description: >-
       Enables/Disables Fail2Ban.
 network:
-  80/tcp: Web interface
+  7277/tcp: Web interface

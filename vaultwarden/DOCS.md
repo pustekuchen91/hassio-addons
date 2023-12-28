@@ -60,6 +60,10 @@ fail2ban: true
 push_key: "123"
 push_id: "123"
 log_level: info
+ssl: false
+certfile: fullchain.pem
+keyfile: privkey.pem
+request_size_limit: 10485760
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -81,6 +85,35 @@ Please note that each level automatically includes log messages from a
 more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
+
+### Option: `ssl`
+
+Enables/Disables SSL (HTTPS). Set it `true` to enable it, `false` otherwise.
+
+**Note**: _The SSL settings only apply to direct access and has no effect
+on the Ingress service._
+
+### Option: `certfile`
+
+The certificate file to use for SSL.
+
+**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+
+### Option: `keyfile`
+
+The private key file to use for SSL.
+
+**Note**: _The file MUST be stored in `/ssl/`, which is the default_
+
+### Option: `request_size_limit`
+
+By default the API calls are limited to 10MB. This should be sufficient for
+most cases, however if you want to support large imports, this might be
+limiting you. On the other hand you might want to limit the request size to
+something smaller than that to prevent API abuse and possible DOS attack,
+especially if running with limited resources.
+
+To set the limit, you can use this setting: 10MB would be `10485760`.
 
 ### Option: `fail2ban`
 
@@ -117,7 +150,11 @@ You could also [open an issue here][issue] GitHub.
 
 ## Authors & contributors
 
+The original setup of this repository is by [Franck Nijhof][frenck].
 The original setup of this repository is by [StrausFuenf][strausfuenf].
+
+For a full list of all authors and contributors,
+check [the contributor's page][contributors].
 
 ## License
 
@@ -145,7 +182,13 @@ SOFTWARE.
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
 [addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_bitwarden&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
+[contributors]: https://github.com/hassio-addons/addon-bitwarden/graphs/contributors
+[discord-ha]: https://discord.gg/c5DvZ4e
+[discord]: https://discord.me/hassioaddons
+[forum]: https://community.home-assistant.io/t/home-assistant-community-add-on-bitwarden-rs/115573?u=frenck
 [frenck]: https://github.com/frenck
+[issue]: https://github.com/hassio-addons/addon-bitwarden/issues
+[reddit]: https://reddit.com/r/homeassistant
+[releases]: https://github.com/hassio-addons/addon-bitwarden/releases
+[semver]: https://semver.org/spec/v2.0.0.html
 [vaultwarden]: https://github.com/dani-garcia/vaultwarden
-[community-addon]: https://github.com/hassio-addons/repository/tree/master/bitwarden
-[strausfuenf]: https://github.com/strausfuenf
